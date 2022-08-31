@@ -1,0 +1,17 @@
+﻿global using MediatR;
+global using Microsoft.Extensions.DependencyInjection;
+global using System.Reflection;
+global using VideoGames.Application.Services.VideoGameDevelopers;
+global using VideoGames.Application.Services.VideoGameGenres;
+global using VideoGames.Application.Services.VideoGames;
+global using VideoGames.Domain.Commands.VideoGameDevelopers;
+global using VideoGames.Domain.Commands.VideoGameGenres;
+global using VideoGames.Domain.Commands.VideoGames;
+global using VideoGames.Domain.Interfaces.Services;
+global using VideoGames.Domain.Queries.VideoGameDevelopers;
+global using VideoGames.Domain.Queries.VideoGameGenres;
+global using VideoGames.Domain.Queries.VideoGames;
+global using VideoGames.Infrastructure.IoC.MediatR.Profiles;
+global using VideoGames.Persistence.Entities;
+global using VideoGames.Persistence.Interfaces;
+global using VideoGames.Persistence.Repositories;

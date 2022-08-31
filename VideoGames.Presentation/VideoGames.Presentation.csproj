@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.12.0-dev-01535" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0-dev-00281" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.1-dev-00947" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VideoGames.Domain\VideoGames.Domain.csproj" />
+    <ProjectReference Include="..\VideoGames.Infrastructure\VideoGames.Infrastructure.csproj" />
+    <ProjectReference Include="..\VideoGames.Persistence\VideoGames.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

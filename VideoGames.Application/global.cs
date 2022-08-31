@@ -1,0 +1,10 @@
+﻿global using MediatR;
+global using Microsoft.Extensions.Logging;
+global using VideoGames.Domain.Commands.VideoGameDevelopers;
+global using VideoGames.Domain.Commands.VideoGameGenres;
+global using VideoGames.Domain.Commands.VideoGames;
+global using VideoGames.Domain.Interfaces.Services;
+global using VideoGames.Domain.Queries.VideoGameDevelopers;
+global using VideoGames.Domain.Queries.VideoGameGenres;
+global using VideoGames.Domain.Queries.VideoGames;
+global using VideoGames.Persistence.Entities;
