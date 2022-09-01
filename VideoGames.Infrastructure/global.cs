@@ -1,4 +1,5 @@
-﻿global using MediatR;
+﻿global using LanguageExt;
+global using MediatR;
 global using Microsoft.Extensions.DependencyInjection;
 global using System.Reflection;
 global using VideoGames.Application.Services.VideoGameDevelopers;

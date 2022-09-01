@@ -15,7 +15,7 @@ public class VideoGamesLoggerService : IVideoGamesService
         _logger = logger;
     }
 
-    public async Task<VideoGameEntity?> GetAsync(Guid id)
+    public async Task<Option<VideoGameEntity>> GetAsync(Guid id)
     {
         try
         {

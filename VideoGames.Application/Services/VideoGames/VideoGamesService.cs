@@ -8,7 +8,7 @@ public class VideoGamesService : IVideoGamesService
         IMediator mediator) =>
         _mediator = mediator;
 
-    public async Task<VideoGameEntity?> GetAsync(Guid id) =>
+    public async Task<Option<VideoGameEntity>> GetAsync(Guid id) =>
         await _mediator.Send(
             request: new GetVideoGameQuery(
                 predicate: game => game.Id.Equals(g: id)));

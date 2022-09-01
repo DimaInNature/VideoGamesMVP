@@ -15,7 +15,7 @@ public class VideoGameGenresLoggerService : IVideoGameGenresService
         _logger = logger;
     }
 
-    public async Task<VideoGameGenreEntity?> GetAsync(Guid id)
+    public async Task<Option<VideoGameGenreEntity>> GetAsync(Guid id)
     {
         try
         {

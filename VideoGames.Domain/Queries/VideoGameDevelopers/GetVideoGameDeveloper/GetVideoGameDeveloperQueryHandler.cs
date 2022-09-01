@@ -1,7 +1,7 @@
 ﻿namespace VideoGames.Domain.Queries.VideoGameDevelopers;
 
 public sealed record GetVideoGameDeveloperQueryHandler
-    : IRequestHandler<GetVideoGameDeveloperQuery, VideoGameDeveloperEntity?>
+    : IRequestHandler<GetVideoGameDeveloperQuery, Option<VideoGameDeveloperEntity>>
 {
     private readonly IGenericRepository<VideoGameDeveloperEntity> _repository;
 
@@ -9,10 +9,10 @@ public sealed record GetVideoGameDeveloperQueryHandler
         IGenericRepository<VideoGameDeveloperEntity> repository) =>
         _repository = repository;
 
-    public async Task<VideoGameDeveloperEntity?> Handle(
+    public async Task<Option<VideoGameDeveloperEntity>> Handle(
         GetVideoGameDeveloperQuery request,
         CancellationToken cancellationToken) =>
-        request.Predicate is not null
-        ? _repository.GetFirstOrDefault(predicate: request.Predicate)
-        : default;
+        request.Predicate.Match(
+            Some: _repository.GetFirstOrDefault,
+            None: () => default);
 }

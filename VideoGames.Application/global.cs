@@ -1,4 +1,5 @@
-﻿global using MediatR;
+﻿global using LanguageExt;
+global using MediatR;
 global using Microsoft.Extensions.Logging;
 global using VideoGames.Domain.Commands.VideoGameDevelopers;
 global using VideoGames.Domain.Commands.VideoGameGenres;

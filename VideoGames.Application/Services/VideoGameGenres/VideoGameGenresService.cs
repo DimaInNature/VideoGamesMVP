@@ -8,7 +8,7 @@ public class VideoGameGenresService : IVideoGameGenresService
         IMediator mediator) =>
         _mediator = mediator;
 
-    public async Task<VideoGameGenreEntity?> GetAsync(Guid id) =>
+    public async Task<Option<VideoGameGenreEntity>> GetAsync(Guid id) =>
         await _mediator.Send(
             request: new GetVideoGameGenreQuery(
                 predicate: genre => genre.Id.Equals(g: id)));

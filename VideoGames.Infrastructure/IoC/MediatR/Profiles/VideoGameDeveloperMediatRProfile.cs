@@ -21,8 +21,8 @@ public static class VideoGameDeveloperMediatRProfile
 
         #region Queries
 
-        services.AddScoped<IRequest<VideoGameDeveloperEntity?>, GetVideoGameDeveloperQuery>();
-        services.AddScoped<IRequestHandler<GetVideoGameDeveloperQuery, VideoGameDeveloperEntity?>, GetVideoGameDeveloperQueryHandler>();
+        services.AddScoped<IRequest<Option<VideoGameDeveloperEntity>>, GetVideoGameDeveloperQuery>();
+        services.AddScoped<IRequestHandler<GetVideoGameDeveloperQuery, Option<VideoGameDeveloperEntity>>, GetVideoGameDeveloperQueryHandler>();
 
         services.AddScoped<IRequest<IEnumerable<VideoGameDeveloperEntity>>, GetVideoGameDevelopersListQuery>();
         services.AddScoped<IRequestHandler<GetVideoGameDevelopersListQuery, IEnumerable<VideoGameDeveloperEntity>>, GetVideoGameDevelopersListQueryHandler>();

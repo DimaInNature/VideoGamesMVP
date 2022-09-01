@@ -6,7 +6,7 @@ public interface IVideoGamesService
 
     public Task<IEnumerable<VideoGameEntity>> GetAllAsync(string genre);
 
-    public Task<VideoGameEntity?> GetAsync(Guid id);
+    public Task<Option<VideoGameEntity>> GetAsync(Guid id);
 
     public Task CreateAsync(VideoGameEntity entity);
 

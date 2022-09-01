@@ -21,8 +21,8 @@ public static class VideoGameMediatRProfile
 
         #region Queries
 
-        services.AddScoped<IRequest<VideoGameEntity?>, GetVideoGameQuery>();
-        services.AddScoped<IRequestHandler<GetVideoGameQuery, VideoGameEntity?>, GetVideoGameQueryHandler>();
+        services.AddScoped<IRequest<Option<VideoGameEntity>>, GetVideoGameQuery>();
+        services.AddScoped<IRequestHandler<GetVideoGameQuery, Option<VideoGameEntity>>, GetVideoGameQueryHandler>();
 
         services.AddScoped<IRequest<IEnumerable<VideoGameEntity>>, GetVideoGamesListQuery>();
         services.AddScoped<IRequestHandler<GetVideoGamesListQuery, IEnumerable<VideoGameEntity>>, GetVideoGamesListQueryHandler>();

@@ -12,7 +12,7 @@ public sealed record GetVideoGameDevelopersListQueryHandler
     public async Task<IEnumerable<VideoGameDeveloperEntity>> Handle(
         GetVideoGameDevelopersListQuery request,
         CancellationToken cancellationToken) =>
-        request.Predicate is null
-        ? _repository.GetAll()
-        : _repository.GetAll(predicate: request.Predicate);
+        request.Predicate.Match(
+            Some: _repository.GetAll,
+            None: _repository.GetAll);
 }

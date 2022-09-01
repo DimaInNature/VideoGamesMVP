@@ -21,8 +21,8 @@ public static class VideoGameGenreMediatRProfile
 
         #region Queries
 
-        services.AddScoped<IRequest<VideoGameGenreEntity?>, GetVideoGameGenreQuery>();
-        services.AddScoped<IRequestHandler<GetVideoGameGenreQuery, VideoGameGenreEntity?>, GetVideoGameGenreQueryHandler>();
+        services.AddScoped<IRequest<Option<VideoGameGenreEntity>>, GetVideoGameGenreQuery>();
+        services.AddScoped<IRequestHandler<GetVideoGameGenreQuery, Option<VideoGameGenreEntity>>, GetVideoGameGenreQueryHandler>();
 
         services.AddScoped<IRequest<IEnumerable<VideoGameGenreEntity>>, GetVideoGameGenresListQuery>();
         services.AddScoped<IRequestHandler<GetVideoGameGenresListQuery, IEnumerable<VideoGameGenreEntity>>, GetVideoGameGenresListQueryHandler>();

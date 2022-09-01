@@ -4,7 +4,7 @@ public interface IVideoGameDevelopersService
 {
     public Task<IEnumerable<VideoGameDeveloperEntity>> GetAllAsync();
 
-    public Task<VideoGameDeveloperEntity?> GetAsync(Guid id);
+    public Task<Option<VideoGameDeveloperEntity>> GetAsync(Guid id);
 
     public Task CreateAsync(VideoGameDeveloperEntity entity);
 

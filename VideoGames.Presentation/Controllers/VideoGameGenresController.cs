@@ -18,7 +18,6 @@ public class VideoGameGenresController : ControllerBase
         _videoGamesService = videoGamesService;
     }
 
-
     /// <summary>
     /// Get video game genres.
     /// </summary>
@@ -58,11 +57,11 @@ public class VideoGameGenresController : ControllerBase
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     [ProducesResponseType(statusCode: StatusCodes.Status404NotFound)]
     [HttpGet(template: "{id}")]
-    public async Task<ActionResult<VideoGameGenreEntity>> Get(Guid id)
+    public async Task<IActionResult> Get(Guid id)
     {
-        var result = await _videoGameGenresService.GetAsync(id);
+        var genre = await _videoGameGenresService.GetAsync(id);
 
-        return result is not null ? Ok(value: result) : NotFound();
+        return genre.Match<IActionResult>(Some: Ok, None: NotFound);
     }
 
     /// <summary>

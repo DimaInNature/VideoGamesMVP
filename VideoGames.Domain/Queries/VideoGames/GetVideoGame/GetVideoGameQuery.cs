@@ -1,9 +1,9 @@
 ﻿namespace VideoGames.Domain.Queries.VideoGames;
 
 public sealed record GetVideoGameQuery
-    : IRequest<VideoGameEntity?>
+    : IRequest<Option<VideoGameEntity>>
 {
-    public Func<VideoGameEntity, bool>? Predicate { get; }
+    public Option<Func<VideoGameEntity, bool>> Predicate { get; }
 
     public GetVideoGameQuery(
         Func<VideoGameEntity, bool> predicate) =>

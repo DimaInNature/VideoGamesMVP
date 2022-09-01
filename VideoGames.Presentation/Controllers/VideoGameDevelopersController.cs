@@ -50,11 +50,11 @@ public class VideoGameDevelopersController : ControllerBase
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     [ProducesResponseType(statusCode: StatusCodes.Status404NotFound)]
     [HttpGet(template: "{id}")]
-    public async Task<ActionResult<VideoGameDeveloperEntity>> Get(Guid id)
+    public async Task<IActionResult> Get(Guid id)
     {
-        var result = await _videoGameDevelopersService.GetAsync(id);
+        var developer = await _videoGameDevelopersService.GetAsync(id);
 
-        return result is not null ? Ok(value: result) : NotFound();
+        return developer.Match<IActionResult>(Some: Ok, None: NotFound);
     }
 
     /// <summary>
